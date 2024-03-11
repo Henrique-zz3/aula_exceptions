@@ -1,5 +1,6 @@
 package aula_exceptions;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Divisao {
@@ -8,16 +9,32 @@ public class Divisao {
 	
 	public static void main(String[] args) {
 		
-		int dividendo = 0;
-		int divisor = 0;
+		int dividendo, divisor;
+		
+		try {
 			
-		System.out.println("Digite o Dividendo: ");
-		dividendo = ler.nextInt();
+			
+			System.out.println("Digite o Dividendo: ");
+			dividendo = ler.nextInt();
+					
+			System.out.println("Digite o Divisor: ");
+			divisor = ler.nextInt();
+					
+			divide(dividendo, divisor);
 				
-		System.out.println("Digite o Divisor: ");
-		divisor = ler.nextInt();
-				
-		divide(dividendo, divisor);
+		}catch(InputMismatchException exc) {
+			System.err.println("Exceção: " + exc);
+			System.out.println("Tipagem errada, apenas número inteiros");
+			
+		}catch(ArithmeticException exc) {
+			System.err.println("Exceção: " + exc);
+			System.out.println("Não pode dividir por 0");
+			
+		}finally{
+			System.out.println("Divisão concluída!");
+			
+		}
+			
 		
 	}
 

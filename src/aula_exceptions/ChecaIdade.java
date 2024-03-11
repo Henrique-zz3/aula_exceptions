@@ -19,9 +19,14 @@ public class ChecaIdade {
 
 	public static void validarIdade(int idade){
 		
-		if(idade > 18)
+		if(idade >= 18) {
 			System.out.println("A Pessoa pode dirigir!!");
-	
-	}
+		
+		}else {
+			throw new ArithmeticException("A Pessoa não pode dirigir!!");
+			
+		}
 
+	}
+	
 }

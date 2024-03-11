@@ -2,7 +2,7 @@ package aula_exceptions;
 
 public class TestaExcecaoSimples {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception{
 
 		String nomes[] = { "João", "Maria", "Pedro", "Manuela" };
 
@@ -14,6 +14,8 @@ public class TestaExcecaoSimples {
 			System.err.println("\nExceção: " + e);
 			System.out.println("\nPosição Inválida");
 		}
+		
+		throw new Exception("Exceção Simples!");
 		
 	}
 
